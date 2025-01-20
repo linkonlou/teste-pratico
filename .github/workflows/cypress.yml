@@ -3,10 +3,10 @@ name: Cypress Tests
 on:
   push:
     branches:
-      - main
+      - challenge-qa
   pull_request:
     branches:
-      - main
+      - challenge-qa
 
 jobs:
   cypress-run:
