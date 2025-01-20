@@ -1,79 +1,116 @@
-# TESTE QA SENIOR
-### Objetivo
-Avaliar a habilidade do candidato em configurar um ambiente de testes, utilizar Git e aplicar conhecimentos básicos de Cypress e Javascript.
 
-### Cenário
-**Aplicativo**: Acessar a nossa landing page - https://meus-emprestimos.picpay.com/ (poderá ser via navegador) com um formulário de login.
+# Projeto de Testes Automatizados com Cypress
 
-### Tarefa
-- Criar um teste automatizado que:
-- Abra o navegador a sua escolha.
-- Abre o site, navegue na área não logada;
-- Preencha o formulário de cadastro;
-- Clique no botão de login.
-- Verifique se o usuário foi redirecionado para a tela inicial ou tela de erro.
-- Gerar evidências das navegações.
+Este projeto contém testes automatizados utilizando o framework Cypress para validar o fluxo de cadastro no PicPay.
 
-### Instruções para o Candidato
-- Fork do repositório: 
-O candidato deverá criar um fork de um repositório GitHub com o projeto do aplicativo e o framework de testes (Appium ou Cypress) já configurado.
+## Estrutura do Projeto
 
-- Configuração do ambiente: 
-O candidato deverá configurar seu ambiente de desenvolvimento com as ferramentas necessárias para executar os testes (Node.js, npm, etc.).
+A estrutura do projeto está organizada da seguinte forma:
 
-- Criação do teste: 
-O candidato deverá criar um novo arquivo de teste e implementar o cenário descrito acima.
+```
+.gitignore  
+cypress/  
+  downloads/  
+  e2e/  
+    login.cy.js  
+  fixtures/  
+    invalidData.json  
+  pages/  
+    HomePage.js  
+    SignUpPage.js  
+  support/  
+    commands.js  
+    e2e.js  
+  utils/  
+    generateRegistrationData.js  
+videos/  
+cypress.config.js  
+package.json  
+README.md
+```
 
-- Execução do teste: O candidato deverá executar o teste e verificar se ele passa.
+### Detalhamento dos Arquivos e Pastas:
 
-- Commit e push: 
-O candidato deverá commitar as alterações e fazer um push para o seu fork.
+- **`cypress/e2e/login.cy.js`**: Contém os testes de login.
+- **`cypress/fixtures/invalidData.json`**: Contém dados inválidos usados nos testes.
+- **`cypress/pages/HomePage.js`**: Página de ações relacionadas à Home Page.
+- **`cypress/pages/SignUpPage.js`**: Página de ações relacionadas ao cadastro.
+- **`cypress/support/commands.js`**: Comandos customizados do Cypress.
+- **`cypress/utils/generateRegistrationData.js`**: Função para gerar dados de registro aleatórios.
+- **`cypress.config.js`**: Configurações do Cypress.
+- **`package.json`**: Lista as dependências do projeto.
 
-- Envio do link: 
-O candidato deverá enviar o link do seu fork para que a equipe possa avaliar o código.
+## Como Executar este Projeto
 
-- Repositório Base:
-Para simplificar a avaliação, você pode criar um repositório base no GitHub com o seguinte conteúdo:
+### Pré-requisitos
 
-- Framework de testes:
-Uma estrutura básica de testes com Appium ou Cypress, incluindo configurações e exemplos de testes.
+- Node.js (versão 22.13.0 ou superior)
+- Cypress (versão 14.0.0 ou superior)
 
-- README:
-Um arquivo README com instruções detalhadas sobre como configurar o ambiente, executar os testes e enviar a solução.
+### Passo a Passo
 
-## Teste Prático - Engenheiro de Qualidade Senior
-### Instruções
-
-1. **Fork este repositório:** Clique no botão "Fork" no canto superior direito.
-2. **Clone o seu fork:** `git clone https://github.com/seu_usuario/teste-pratico.git`
-3. **Instale as dependências:** `npm install`
-4. **Crie um novo arquivo de teste:** `testes/login_test.js` (ou similar)
-5. **Implemente o teste:** Siga as instruções acima para criar o teste automatizado.
-6. **Execute os testes:** `npm test`
-7. **Faça um commit e push:**
+1. **Clone o repositório:**
    ```bash
-   git add .
-   git commit -m "Implementação do teste de login"
-   git push origin main
-Envie o link do seu fork: Envie o link do seu repositório para a equipe de recrutamento.
-Estrutura do Projeto
-testes: Contém os arquivos de teste.
-package.json: Lista as dependências do projeto.
+   git clone https://github.com/linkonlou/teste-pratico.git
+   ```
+
+2. **Navegue até o diretório do projeto:**
+   ```bash
+   cd teste-pratico
+   ```
+
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+
+4. **Abra o Cypress Test Runner:**
+   Execute o seguinte comando para abrir a interface gráfica do Cypress:
+   ```bash
+   npx cypress open
+   ```
+
+5. **Execute os testes:**
+   No Cypress Test Runner, clique no arquivo de teste `login.cy.js` para executar os testes de login.
+
+### Executando os Testes em Modo Headless
+
+Para executar os testes em modo headless (sem interface gráfica), utilize o comando:
+
+```bash
+npx cypress run
+```
+
+Isso executará todos os testes e gerará relatórios de execução.
+
+## Observações
+
+- Certifique-se de que a versão do Node.js instalada seja compatível com a versão do Cypress utilizada no projeto.
+- Para mais informações sobre como utilizar o Cypress, consulte a [documentação oficial do Cypress](https://www.cypress.io/docs/).
 
 
+## Cenários de Testes Validados
 
-Dicas
-- Utilize os comentários para explicar o seu código.
-- Siga as boas práticas de desenvolvimento de testes.
-- Divida o teste em etapas menores para facilitar a leitura e a manutenção.
-- Avaliação:
-- A avaliação do teste prático poderá considerar os seguintes aspectos:
-- Correção do código: O teste executa corretamente o cenário proposto?
-- Qualidade do código: O código está bem estruturado, comentado e segue boas práticas?
-- Uso do framework: O candidato demonstra conhecimento do framework escolhido (Appium ou Cypress)?
-- Criatividade: O candidato apresentou alguma solução inovadora ou diferente?
-- Observações:
-- Flexibilidade: Adapte o nível de complexidade do teste de acordo com o perfil do candidato e a experiência desejada.
-- Personalização: Você pode adicionar outros cenários de teste para avaliar diferentes habilidades (por exemplo, testes de API, testes de performance).
-- Ferramentas: Utilize ferramentas de code review para facilitar a avaliação do código.
-- Com este teste prático, você poderá avaliar de forma mais precisa as habilidades técnicas e a capacidade de resolução de problemas dos candidatos.
+### CT01 - Cadastro com sucesso:
+Preenche o formulário com dados válidos.
+Verifica se o cadastro foi bem-sucedido exibindo a mensagem de sucesso.
+
+### CT02 - CPF inválido:
+Preenche o formulário com um CPF inválido.
+Verifica se a mensagem de erro para CPF inválido é exibida.
+
+### CT03 - Nascimento inválido:
+Preenche o formulário com uma data de nascimento inválida.
+Verifica se a mensagem de erro para data de nascimento inválida é exibida.
+
+### CT04 - Usuário menor de idade:
+Preenche o formulário com uma data de nascimento que indica menor de idade.
+Verifica se a mensagem de erro para idade menor de 18 anos é exibida.
+
+### CT05 - Usuário com idade superior a 100 anos:
+Preenche o formulário com uma data de nascimento que indica idade superior a 100 anos.
+Verifica se a mensagem de erro para nascimento inválido é exibida.
+
+### CT06 - Usuário sem termos de aceite:
+Preenche o formulário sem aceitar os termos de uso.
+Verifica se a mensagem de erro devido à falta de aceite aos termos é exibida.
