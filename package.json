@@ -1,0 +1,25 @@
+{
+  "name": "teste-pratico",
+  "version": "1.0.0",
+  "description": "Avaliar a habilidade do candidato em configurar um ambiente de testes, utilizar Git e aplicar conhecimentos básicos de Cypress e Javascript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linkonlou/teste-pratico.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/linkonlou/teste-pratico/issues"
+  },
+  "homepage": "https://github.com/linkonlou/teste-pratico#readme",
+  "devDependencies": {
+    "cypress": "^14.0.0",
+    "faker-br": "^0.4.1"
+  }
+}

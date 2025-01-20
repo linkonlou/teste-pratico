@@ -1,0 +1,6 @@
+{
+  "invalidCpf": "12345678900",
+  "invalidBirthDate": "12345678",
+  "minorBirthDate": "01012020",
+  "olderThan100BirthDate": "01011900"
+}
