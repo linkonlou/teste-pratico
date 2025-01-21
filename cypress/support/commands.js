@@ -9,6 +9,7 @@ Cypress.Commands.add('openPicPayAccount', () => {
   HomePage.clickOpenAccount();
 });
 
+// Comando customizado para preencher o formulário de cadastro
 Cypress.Commands.add('fillSignUpForm', (registrationData) => {
   SignUpPage.fillCpf(registrationData.cpf);
   SignUpPage.fillName(registrationData.fullName);

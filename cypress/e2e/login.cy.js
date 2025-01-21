@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 import SignUpPage from "../pages/SignUpPage.js";
-import { generateRegistrationData } from "../utils/generateRegistrationData.js"; // Importa a função
+import { generateRegistrationData } from "../utils/generateRegistrationData.js";
 
 describe("Automação de Cadastro no PicPay", () => {
   let registrationData;
