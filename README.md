@@ -8,6 +8,7 @@ Este projeto contém testes automatizados utilizando o framework Cypress para va
 A estrutura do projeto está organizada da seguinte forma:
 
 ```
+.github/workflows
 .gitignore  
 cypress/  
   downloads/  
@@ -23,6 +24,8 @@ cypress/
     e2e.js  
   utils/  
     generateRegistrationData.js  
+reports/
+screenshots/
 videos/  
 cypress.config.js  
 package.json  
@@ -31,11 +34,16 @@ README.md
 
 ### Detalhamento dos Arquivos e Pastas:
 
+- **`.github/workflows`**: Contém os a pipeline que executa o cypress no github.
+- **`gitignore`**: Contém os arquivos e pastas para serem ignorados pelo git.
 - **`cypress/e2e/login.cy.js`**: Contém os testes de login.
 - **`cypress/fixtures/invalidData.json`**: Contém dados inválidos usados nos testes.
 - **`cypress/pages/HomePage.js`**: Página de ações relacionadas à Home Page.
 - **`cypress/pages/SignUpPage.js`**: Página de ações relacionadas ao cadastro.
 - **`cypress/support/commands.js`**: Comandos customizados do Cypress.
+- **`cypress/screenshots/`**: Pasta com os screenshots dos tests, gerados apenas se os testes falharem.
+- **`cypress/reports/mochawesome.html`**: Relatório de testes gerado pelo mochawesome em html.
+- **`cypress/videos/login.cy.js.mp4`**: Evidencia dos testes no formato de video.
 - **`cypress/utils/generateRegistrationData.js`**: Função para gerar dados de registro aleatórios.
 - **`cypress.config.js`**: Configurações do Cypress.
 - **`package.json`**: Lista as dependências do projeto.
@@ -87,6 +95,14 @@ Isso executará todos os testes e gerará relatórios de execução.
 
 - Certifique-se de que a versão do Node.js instalada seja compatível com a versão do Cypress utilizada no projeto.
 - Para mais informações sobre como utilizar o Cypress, consulte a [documentação oficial do Cypress](https://www.cypress.io/docs/).
+
+
+## Biblioteca Utilizada para gerar dados aleatórios
+   faker-br: Biblioteca para geração de dados falsos específicos para o Brasil.
+   Para mais detalhes sobre as dependências, consulte o arquivo package.json.
+
+## Integração Contínua com GitHub Actions
+   Este projeto utiliza GitHub Actions para executar os testes automaticamente em cada push ou pull request para a branch challenge-qa.
 
 
 ## Cenários de Testes Validados

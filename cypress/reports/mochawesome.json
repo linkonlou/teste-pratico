@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-21T11:59:11.701Z",
+    "end": "2025-01-21T11:59:57.003Z",
+    "duration": 45302,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "57c1b442-50c1-4f52-b2d4-bdd0de198b5b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e7f57af4-bd65-45bf-9f2f-393d6a6559c5",
+          "title": "Automação de Cadastro no PicPay",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CT01 - Cadastro com sucesso",
+              "fullTitle": "Automação de Cadastro no PicPay CT01 - Cadastro com sucesso",
+              "timedOut": null,
+              "duration": 12144,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche o formulário com dados válidos\ncy.fillSignUpForm(registrationData);\n_SignUpPage.default.checkAgremeents();\n_SignUpPage.default.submitForm();\n// Verifica se o cadastro foi bem-sucedido\ncy.contains(\"Aponte o celular para o QRCode para baixar o App PicPay e finalize a abertura da sua conta.\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "46497038-4434-4b9b-81f8-442cde5b2206",
+              "parentUUID": "e7f57af4-bd65-45bf-9f2f-393d6a6559c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT02 - CPF invalido",
+              "fullTitle": "Automação de Cadastro no PicPay CT02 - CPF invalido",
+              "timedOut": null,
+              "duration": 6978,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche o formulário com CPF inválido da fixture\ncy.fillSignUpForm(_objectSpread(_objectSpread({}, registrationData), {}, {\n  cpf: invalidData.invalidCpf\n}));\n_SignUpPage.default.checkAgremeents();\n_SignUpPage.default.submitForm();\n// Verifica se a mensagem de erro para CPF inválido é exibida\ncy.contains(\"CPF inválido\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "483d9fe6-3f7c-48a0-b638-62b9bd112c00",
+              "parentUUID": "e7f57af4-bd65-45bf-9f2f-393d6a6559c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT03 - Nascimento invalido",
+              "fullTitle": "Automação de Cadastro no PicPay CT03 - Nascimento invalido",
+              "timedOut": null,
+              "duration": 5987,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche o formulário com nascimento inválido da fixture\ncy.fillSignUpForm(_objectSpread(_objectSpread({}, registrationData), {}, {\n  birthDate: invalidData.invalidBirthDate\n}));\n// Verifica se a mensagem de erro para Nascimento invalido é exibida\ncy.contains(\"Data de nascimento inválida\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "d8621f29-fdac-4c36-9f64-8a89b1db655c",
+              "parentUUID": "e7f57af4-bd65-45bf-9f2f-393d6a6559c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT04 - Usuário menor de idade",
+              "fullTitle": "Automação de Cadastro no PicPay CT04 - Usuário menor de idade",
+              "timedOut": null,
+              "duration": 6530,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche o formulário com nascimento menor de idade da fixture\ncy.fillSignUpForm(_objectSpread(_objectSpread({}, registrationData), {}, {\n  birthDate: invalidData.minorBirthDate\n}));\n// Verifica se a mensagem de erro para idade menor de 18 anos é exibida\ncy.contains(\"Você deve ter pelo menos 18 anos\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "2032bf4a-264f-4aff-9f20-9a8ba6c7926c",
+              "parentUUID": "e7f57af4-bd65-45bf-9f2f-393d6a6559c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT05 - Usuário com idade superior a 100 anos",
+              "fullTitle": "Automação de Cadastro no PicPay CT05 - Usuário com idade superior a 100 anos",
+              "timedOut": null,
+              "duration": 6219,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche o formulário com idade superior a 100 anos\ncy.fillSignUpForm(_objectSpread(_objectSpread({}, registrationData), {}, {\n  birthDate: invalidData.olderThan100BirthDate\n}));\n// Verifica se a mensagem de erro para nascimento inválido é exibida\ncy.contains(\"Data de nascimento inválida\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "a9558233-3654-4765-b230-87e95b479526",
+              "parentUUID": "e7f57af4-bd65-45bf-9f2f-393d6a6559c5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CT06 - Usuário sem termos de aceite",
+              "fullTitle": "Automação de Cadastro no PicPay CT06 - Usuário sem termos de aceite",
+              "timedOut": null,
+              "duration": 6380,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Preenche o formulário sem aceitar os termos\ncy.fillSignUpForm(registrationData);\n// Não chama SignUpPage.checkAgremeents() para simular a falta de aceitação dos termos\n_SignUpPage.default.submitForm();\n// Verifica se a mensagem de erro devido à falta de aceite aos termos é exibida\ncy.contains(\"Para enviar, você precisa concordar com a Política de Privacidade.\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "149a0d31-5297-4e6e-acd2-f8bf10e5c5e3",
+              "parentUUID": "e7f57af4-bd65-45bf-9f2f-393d6a6559c5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "46497038-4434-4b9b-81f8-442cde5b2206",
+            "483d9fe6-3f7c-48a0-b638-62b9bd112c00",
+            "d8621f29-fdac-4c36-9f64-8a89b1db655c",
+            "2032bf4a-264f-4aff-9f20-9a8ba6c7926c",
+            "a9558233-3654-4765-b230-87e95b479526",
+            "149a0d31-5297-4e6e-acd2-f8bf10e5c5e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 44238,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

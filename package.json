@@ -20,6 +20,7 @@
   "homepage": "https://github.com/linkonlou/teste-pratico#readme",
   "devDependencies": {
     "cypress": "^14.0.0",
-    "faker-br": "^0.4.1"
+    "faker-br": "^0.4.1",
+    "mochawesome": "^7.1.3"
   }
 }
